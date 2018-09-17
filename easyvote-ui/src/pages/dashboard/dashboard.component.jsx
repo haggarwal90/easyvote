@@ -1,22 +1,16 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { connect}  from 'react-redux';
 
 import User from 'pages/user';
 import { fetchUsers } from 'models/actions/users/users.action';
 
 class Dashboard extends React.PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            users: [],
-        }
-    }
     componentDidMount() {
         this.props.fetchUsers();
     }
     render() {
-        const { users } = this.state;
-        console.log('users ', users);
+        const { users } = this.props;
         return (
             <div className='dashboard'>
               Welcome to EasyVote !!
@@ -28,8 +22,9 @@ class Dashboard extends React.PureComponent {
     }
 }
 
-const mapStateToProps = store => ({
-    'users': state.users,
+
+const mapStateToProps = state => ({
+    'users': state.users.toJS().users,
 })
 
 const mapDispatchToProps = dispatch => ({

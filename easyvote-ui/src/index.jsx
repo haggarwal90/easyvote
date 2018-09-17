@@ -7,8 +7,10 @@ import Dashboard from 'pages/dashboard';
 
 import store from 'models';
 
+const appStore = store();
+
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={appStore}>
       <App>
         <Dashboard />
       </App>
