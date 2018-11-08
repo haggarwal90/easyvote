@@ -3,6 +3,7 @@ import userActions from 'models/actions/users';
 
 const initialState = fromJS({
     users: fromJS([]),
+    details: fromJS({}),
 });
 
 /*
@@ -14,6 +15,8 @@ export default (state = initialState, action) => {
     switch (type) {
         case userActions.FETCH_USERS_COMPLETED:
             return state.set('users', payload);
+        case userActions.FETCH_USER_DETAILS_COMPLETED:
+            return state.set('details', payload);
         default:
             return state;
     }
