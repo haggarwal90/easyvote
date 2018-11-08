@@ -2,6 +2,13 @@ version: '3.0' # specify docker-compose version
 
 # Define the services/containsers to be run
 services:
+  express: # name of the first  service
+    build: easyvote-node # specify the directory of docker file
+    ports: 
+      - "8080:8080" # specify port mapping
+    links:
+      - database # link this service to database service
+
   database: # name of the second service
     image: mongo # specify image to build container from
     ports:
