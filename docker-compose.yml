@@ -1,0 +1,9 @@
+version: '3.0' # specify docker-compose version
+
+# Define the services/containsers to be run
+services:
+  database: # name of the second service
+    image: mongo # specify image to build container from
+    ports:
+      - "27018:27017" # specify port forwarding		
+
