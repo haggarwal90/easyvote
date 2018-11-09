@@ -6,7 +6,7 @@ const app = express();
 
 const port = process.env.PORT || 8080;        // set our port
 
-mongoose.connect('mongodb://127.0.0.1:27018/contactform');
+mongoose.connect('mongodb://database:27017/contactform');
 mongoose.connection.on('error', error => console.log(error) );
 mongoose.Promise = global.Promise;
 

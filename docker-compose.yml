@@ -6,11 +6,11 @@ services:
     build: easyvote-node # specify the directory of docker file
     ports: 
       - "8080:8080" # specify port mapping
-    links:
-      - database # link this service to database service
+    links: 
+      - database
 
   database: # name of the second service
     image: mongo # specify image to build container from
     ports:
-      - "27018:27017" # specify port forwarding		
+      - "27017:27017" # specify port forwarding		
 
